@@ -1,8 +1,9 @@
+import RouteSwitch from "./components/routes/RouteSwitch"
 
 const App = () => {
   return (
     <div>
-      Shopping Cart
+      <RouteSwitch />
     </div>
   )
 }
