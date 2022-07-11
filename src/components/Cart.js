@@ -7,31 +7,84 @@ import "../styles/route.css"
 const Cart = ({ cart }) => {
 
     const selected = cart
-    console.log(selected)
+    // console.log(selected)
+    const [items, setItem] = useState([]);
+    const [total, setTotal] = useState();
+    const [quantity, setQuantity] = useState(0);
+
 
     useEffect(() => {
         fetchItems();
 
     }, []);
 
-    const [items, setItem] = useState([]);
+    useEffect(() => {
+        addQuantity();
+    }, [quantity])
 
+
+    useEffect(() => {
+        calculateTotal();
+    }, [items])
 
 
     const fetchItems = async () => {
         const data = await fetch(`https://fakestoreapi.com/products`);
         const products = await data.json()
-
+        console.log(products)
 
         for (let i = 0; i < selected.length; i++) {
 
             setItem(arr => [...arr, products[selected[i]]])
-            console.log(items)
+            // console.log(items)
         }
+        setQuantity(1)
 
 
+        console.log(items)
 
     }
+
+    const addQuantity = () => {
+        setItem(items.map(arr => ({ ...arr, qty: 1 })))
+    }
+    const calculateTotal = () => {
+        const total = items.reduce((accumulator, object) => {
+            return accumulator + (object.price * object.qty);
+        }, 0);
+        setTotal(total.toFixed(0));
+    }
+
+    const minusTotal = () => {
+        const total = items.reduce((accumulator, object) => {
+            return accumulator - (object.price * object.qty);
+        }, 0);
+        setTotal(total.toFixed(0));
+    }
+
+    const increase = (arg, arg2) => {
+
+        setItem(items.map(item =>
+            item.id === arg
+                ? { ...item, qty: arg2 + 1 }
+                : item))
+        calculateTotal();
+
+    }
+    const decrease = (arg, arg2) => {
+        setItem(items.map(item =>
+            item.id === arg
+                ? { ...item, qty: arg2 - 1 }
+                : item))
+        minusTotal();
+
+    }
+
+    const deleteProduct = (arg) => {
+        setItem(items.filter(a => a.id !== arg))
+    }
+
+
 
     return (
         <div className="sidecart">
@@ -49,11 +102,18 @@ const Cart = ({ cart }) => {
 
 
 
+                        <button onClick={() => decrease(item.id, item.qty)} >-</button>
+                        <div>Qunatity: {item.qty}</div>
+                        <button onClick={() => increase(item.id, item.qty)} value={item.id}>+</button>
+                        <button onClick={() => deleteProduct(item.id)}>Delete</button>
+
+
 
                     </div>
 
                 ))}
             </div>
+            <div>Total:${total}.00</div>
         </div>
     )
 }
