@@ -12,8 +12,7 @@ const Product = ({ addToCart }) => {
     }, []);
 
     const [item, setItem] = useState([]);
-    const [total, setTotal] = useState(0)
-    const [quantity, setQuantity] = useState(0)
+
 
 
     const id = useParams();
@@ -30,23 +29,6 @@ const Product = ({ addToCart }) => {
     }
 
 
-    const increase = () => {
-        const num = Number((item.price).toFixed(0))
-        setQuantity(quantity + 1)
-        setTotal(total + num)
-
-
-    }
-    const decrease = () => {
-        const num = Number((item.price).toFixed(0))
-        setQuantity(quantity - 1)
-        setTotal(total - num)
-    }
-
-    // const addToCart = (e) => {
-    //     const info = e.target.value;
-    //     setSelected(info);
-    // }
 
 
 
@@ -63,20 +45,17 @@ const Product = ({ addToCart }) => {
                     <div>{item.title}</div>
 
                     <div>${Number(item.price).toFixed(0)}.00</div>
-                    <button onClick={decrease}>-</button>
-                    <div>{quantity}</div>
-                    <button onClick={increase}>+</button>
+
 
                 </div>
 
-                <div>Total:${total}.00</div>
+
                 <button type="submit" onClick={() => addToCart(selected)} value={item.id}>Add to Cart</button>
 
 
 
             </div>
 
-            {/* <img src={item.image} alt={item.title}></img> */}
         </div>
     )
 }
