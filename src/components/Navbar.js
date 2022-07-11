@@ -1,11 +1,7 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import "../styles/route.css"
 
 const Navbar = () => {
-    const [sideCart, setsideCart] = useState(false)
-
-    const showCart = () => setsideCart(!sideCart)
 
     return (
         <div>
@@ -21,12 +17,10 @@ const Navbar = () => {
                         <Link to="/contact">Contact</Link>
                     </li>
                     <li>
-                        <Link to="/cart" onClick={showCart}>Cart</Link>
+                        <Link to="/cart">Cart</Link>
                     </li>
                 </ul>
-                {/* <button>Shop</button>
-            <button>Contact</button>
-            <button>Cart</button> */}
+
             </nav>
         </div>
     )
