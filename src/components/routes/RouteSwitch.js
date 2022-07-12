@@ -16,6 +16,14 @@ const RouteSwitch = () => {
         setCart(cart.concat(num))
         console.log(cart)
     }
+    const deleteForever = (current) => {
+
+        const newValue = (Number(current) - 1)
+
+        setCart(cart.filter(a => a !== newValue))
+
+    }
+
     return (
         <BrowserRouter>
             <Navbar />
@@ -25,7 +33,7 @@ const RouteSwitch = () => {
                 <Route path='/shop' element={<Shop />} />
                 <Route path='shop/shop/:id' element={<Product addToCart={addToCart} />} />
                 <Route path='/contact' element={<Contact />} />
-                <Route path='/cart' element={<Cart cart={cart} />} />
+                <Route path='/cart' element={<Cart cart={cart} deleteForever={deleteForever} />} />
             </Routes>
         </BrowserRouter>
     )

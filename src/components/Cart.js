@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/route.css"
+import { Button } from "react-bootstrap/Button"
 
 
-
-const Cart = ({ cart }) => {
+const Cart = ({ cart, deleteForever }) => {
 
     const selected = cart
     // console.log(selected)
@@ -40,7 +40,6 @@ const Cart = ({ cart }) => {
         }
         setQuantity(1)
 
-
         console.log(items)
 
     }
@@ -55,12 +54,7 @@ const Cart = ({ cart }) => {
         setTotal(total.toFixed(0));
     }
 
-    const minusTotal = () => {
-        const total = items.reduce((accumulator, object) => {
-            return accumulator - (object.price * object.qty);
-        }, 0);
-        setTotal(total.toFixed(0));
-    }
+
 
     const increase = (arg, arg2) => {
 
@@ -76,7 +70,7 @@ const Cart = ({ cart }) => {
             item.id === arg
                 ? { ...item, qty: arg2 - 1 }
                 : item))
-        minusTotal();
+        calculateTotal();
 
     }
 
@@ -102,10 +96,11 @@ const Cart = ({ cart }) => {
 
 
 
-                        <button onClick={() => decrease(item.id, item.qty)} >-</button>
+                        <button className="btn btn-dark btn-sm" onClick={() => decrease(item.id, item.qty)} >-</button>
                         <div>Qunatity: {item.qty}</div>
                         <button onClick={() => increase(item.id, item.qty)} value={item.id}>+</button>
-                        <button onClick={() => deleteProduct(item.id)}>Delete</button>
+                        <button onClick={() => { deleteProduct(item.id); deleteForever(item.id); }}>Delete</button>
+
 
 
 
