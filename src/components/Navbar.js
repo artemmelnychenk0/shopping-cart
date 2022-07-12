@@ -5,8 +5,8 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav>
-                <ul>
+            <nav className="navbar navbar-dark bg-dark">
+                <ul className="navbar-nav mr-auto">
                     <li>
                         <Link to="/">Home</Link>
                     </li>
