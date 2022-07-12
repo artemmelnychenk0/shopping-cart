@@ -1,5 +1,5 @@
-import RouteSwitch from "./components/routes/RouteSwitch"
-
+import RouteSwitch from './routes/RouteSwitch'
+import './styles/style.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
