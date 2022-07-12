@@ -1,0 +1,214 @@
+img {
+    width: 150px;
+    height: 200px;
+}
+
+.display {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+
+}
+
+.item:hover {
+    transform: scale(1.1);
+
+}
+
+.item {
+    border: 1px solid grey;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    transition: transform .2s;
+
+}
+
+.title {
+    padding-top: 20px;
+}
+
+.price {
+    padding-top: 25px;
+}
+
+nav {
+    display: flex;
+}
+
+Nav {
+    font-size: 25px;
+}
+
+.logo {
+    color: aquamarine;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(3px);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    background-color: aquamarine;
+    border-radius: 35px;
+}
+
+.brand {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    font-size: 70px;
+}
+
+.shop-now {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    width: 350px;
+    border-radius: 45px;
+    color: aliceblue;
+    background-color: black;
+    border: 5px solid black;
+    transition: transform .2s;
+}
+
+.shop-now:hover {
+    color: aquamarine
+}
+
+Link {
+    color: black;
+}
+
+.product-img {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 400px;
+}
+
+.product-title {
+    position: absolute;
+    top: 28%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    width: 350px;
+    font-weight: 700;
+}
+
+.product-desc {
+    position: absolute;
+    top: 37%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    font-size: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.product-price {
+    position: absolute;
+    top: 45%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+}
+
+.product-add {
+    position: absolute;
+    top: 53%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    border-radius: 45px;
+    color: aliceblue;
+    font-size: 30px;
+    width: 250px;
+    background-color: black;
+    border: 5px solid black;
+    transition: transform .2s;
+}
+
+.product-add:hover {
+    color: aquamarine
+}
+
+.item-cart {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr 3fr 1fr 1fr 1fr 3fr;
+
+    place-items: center;
+
+}
+
+.item-cart>button {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: rgb(45, 45, 45);
+    color: aliceblue;
+    border: 2px solid black;
+}
+
+.item-cart>.delete {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.cart-total {
+    text-align: center;
+    font-size: 35px;
+}
+
+.container-btn {
+    height: 100px;
+    position: relative;
+}
+
+.checkout {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    width: 300px;
+    border-radius: 45px;
+    color: black;
+    background-color: aquamarine;
+    border: 5px solid black;
+}
+
+.bottom {
+    font-size: 35px;
+    color: white;
+}
