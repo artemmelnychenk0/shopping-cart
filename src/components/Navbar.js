@@ -10,7 +10,7 @@ const Navigation = ({ cart }) => {
             <Container>
                 <Navbar.Brand bsPrefix="logo">StarLight</Navbar.Brand>
                 <Nav className="justify-content-center">
-                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/shopping-cart" className="nav-link">Home</Link>
                     <Link to="/shop" className="nav-link">Shop</Link>
                 </Nav>
                 <Nav><div className="cart-nav">
