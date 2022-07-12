@@ -9,9 +9,9 @@ Objectives: practice using `react-router-dom` to build a multi-page web app util
 ### Screenshots
 -----
 
-<img src="src/assets/screen1.png" height="350px">&nbsp;&nbsp;&nbsp;<img src="src/assets/screen2.png" height="350px">&nbsp;&nbsp;&nbsp;<img src="src/assets/screen3.png" height="350px">&nbsp;&nbsp;&nbsp;
+<img src="src/assets/screenshots/screen1.png" height="300px">&nbsp;&nbsp;&nbsp;<img src="src/assets/screenshots/screen2.png" height="300px">
 
-### TIL Things I Learned
+### Things I Learned
 -----
 
 - how to use routes to navigate between pages
