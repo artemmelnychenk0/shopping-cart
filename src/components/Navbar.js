@@ -1,28 +1,26 @@
 import { Link } from "react-router-dom"
-import "../styles/route.css"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { FaShoppingCart } from 'react-icons/fa'
 
-const Navbar = () => {
-
+const Navigation = ({ cart }) => {
     return (
-        <div>
-            <nav className="navbar navbar-dark bg-dark">
-                <ul className="navbar-nav mr-auto">
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/shop">Shop</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
-                    <li>
-                        <Link to="/cart">Cart</Link>
-                    </li>
-                </ul>
-
-            </nav>
-        </div>
+        <Navbar sticky="top" bg="dark" variant="dark" >
+            <Container>
+                <Navbar.Brand bsPrefix="logo">StarLight</Navbar.Brand>
+                <Nav className="justify-content-center">
+                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/shop" className="nav-link">Shop</Link>
+                </Nav>
+                <Nav><div className="cart-nav">
+                    <Link to="/cart" className="nav-link"><FaShoppingCart />
+                        <span className="header__cart-items">({cart.length})</span>
+                    </Link>
+                </div>
+                </Nav>
+            </Container>
+        </Navbar>
     )
 }
-export default Navbar
+export default Navigation
